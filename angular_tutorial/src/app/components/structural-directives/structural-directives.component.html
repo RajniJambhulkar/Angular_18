@@ -1,0 +1,78 @@
+<h1>Structural Directives</h1>
+<div class="row pt-3" style="width: 100%;">
+    <div class="col-3">
+        <div *ngIf = "isDiv1Visible" class="bg-danger p-3 text-center">
+            <h4>Div-1</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf = "isDiv2Visible" class="bg-success p-3 text-center">
+            <h4>Div-2</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf = "num1==num2" class="bg-secondary p-3 text-center">
+            <h4>Div-3</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div *ngIf = "isChecked && country=='USA'" class="bg-primary p-3 text-center">
+            <h4>Div-4</h4>
+        </div>
+    </div>
+</div>
+<div class="row pt-3" style="width: 100%;">
+    <div class="col-3 text-center">
+    <button class="btn btn-primary text-center p-1" (click)="showDiv1()">Show</button>
+    <button class="btn btn-danger text-center p-1 mx-2" (click)="hideDiv1()">Hide</button>
+
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-secondary p-1" (click)="toggleDiv2()">Toggle</button>
+    </div>
+    <div class="col-3 text-center">
+        <input type="number" placeholder="num-1" [(ngModel)]="num1">
+        <input type="number" placeholder="num-2" [(ngModel)]="num2">
+    </div>
+    <div class="col-3 text-center">
+        <input [(ngModel)] = "isChecked" type="checkbox">
+        <select [(ngModel)]="country">
+            <option value="">Select</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Australia">Australia</option>
+
+        </select>
+    </div>
+</div>
+<div class="row" style="width: 100%;">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let city of cityArray">{{city}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <select>
+            <option *ngFor = "let city of cityArray" value="">{{city}}</option>
+        </select>
+    </div>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>isActive</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let fruit of objectList; let sr = index;">
+            <td>{{sr+1}}</td>
+            <td>{{fruit.name}}</td>
+            <td>{{fruit.city}}</td>
+            <td>{{fruit.isActive}}</td>
+
+        </tr>
+    </tbody>
+</table>

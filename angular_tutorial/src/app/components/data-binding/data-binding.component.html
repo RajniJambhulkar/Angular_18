@@ -1,0 +1,34 @@
+<p>data-binding works!</p>
+<div class="row">
+    <div class="col-4">
+        {{course}}
+     <!-- <div class = "{{myClassName}}">Rajni</div> interpolation-->
+        <div [class] = "myClassName">Rajni</div>  <!-- property binding -->
+    </div>
+    <div class="col-4">
+        {{course}}
+        <input type="text" [(ngModel)]="course"> -- {{course}}
+    </div>
+    <div class="col-4">
+        {{currentDate}}
+        <button [class]="myClassName" (click)="onPress('Angular 18')">{{course}}</button> <!-- event binding -->
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-4">
+            <select [(ngModel)] = "state">    <!-- bydefault maharashtra is selected -->
+            <option value="">Select</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Goa">Goa</option>
+            <option value="Punjab">Punjab</option>
+        </select>
+    </div>
+    <div class="col-4">
+      <h3>{{firstName()}}</h3>        <!-- calling a signal -->
+      <button (click) = changeName()>Change Name</button>
+    </div>
+    <div class="col-4">
+        iokjh
+    </div>
+  </div>

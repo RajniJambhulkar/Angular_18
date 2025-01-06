@@ -1,0 +1,73 @@
+<h1>Attribute Directives</h1>
+<div class="row pt-3" style="width: 100%;">
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass]="div1BgColor">  <!-- dynamic class applied -->
+            <h4>Div-1</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass]="div2BgColor? 'bg-primary':'bg-warning'">
+            <h4>Div-2</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass]="num1==num2? 'bg-success':'btn-danger'">
+            <h4>Div-3</h4>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="p-3 text-center" [ngClass]="isChecked?'bg-primary':''">
+            <h4>Div-4</h4>
+        </div>
+    </div>
+</div>
+<div class="row pt-3" style="width: 100%;">
+    <div class="col-3 text-center">
+    <button class="btn btn-danger text-center p-1" (click)="makeRed()">Add Red</button>
+    <button class="btn btn-primary text-center p-1 mx-2" (click)="makeBlue()">Add Blue</button>
+
+    </div>
+    <div class="col-3 text-center">
+        <button class="btn btn-secondary p-1" (click)="changeToggle()">Toggle</button>
+    </div>
+    <div class="col-3 text-center">
+        <input type="number" placeholder="num-1" [(ngModel)]="num1">
+        <input type="number" placeholder="num-2" [(ngModel)]="num2">
+    </div>
+    <div class="col-3 text-center">
+        <input [(ngModel)]="isChecked" type="checkbox">
+        <select>
+            <option value="">Select</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="Australia">Australia</option>
+        </select>
+    </div>
+</div>
+
+<div [ngStyle]="customStyle">Hey</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sr No.</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>isActive</th>
+            <th>waterContent</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let fruit of objectList; let sr = index;">
+            <td>{{sr+1}}</td>
+            <td>{{fruit.name}}</td>
+            <td>{{fruit.city}}</td>
+            <td>{{fruit.isActive}}</td>
+            <td><div class="progress">
+                <div class="progress-bar" [ngStyle]="{'width':fruit.waterContent+'%'}">{{fruit.waterContent}}</div>
+              </div>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
