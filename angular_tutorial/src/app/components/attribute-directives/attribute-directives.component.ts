@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-attribute-directives',
@@ -31,6 +32,9 @@ export class AttributeDirectivesComponent {
     'text-align':'center'
 
   }
+  constructor(private router:Router){
+
+  }
 
   makeRed(){
     this.div1BgColor = "bg-danger";
@@ -40,5 +44,8 @@ export class AttributeDirectivesComponent {
   }
   changeToggle(){
     this.div2BgColor = !this.div2BgColor;
+  }
+  goToAttributeDir(){
+    this.router.navigateByUrl("structural-dir");
   }
 }
