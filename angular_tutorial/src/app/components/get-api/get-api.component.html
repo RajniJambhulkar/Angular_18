@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-2">
+        <button class="btn btn-success" (click)="getUsers()">Click here</button>
+        <button class="btn btn-success" (click)="getAllCustomers()">Click here</button>
+
+    </div>
+    <div class="col-3">
+        <p>UserList: </p>
+        <div style="background-color: bisque;">
+            <ul>
+                <li *ngFor="let item of userList">
+                    {{item.name}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-3">
+            <p>CustomerList: </p>
+            <div style="background-color: bisque;">
+                <ul>
+                    @for (item of customerList; track $index) {
+
+                    <li>{{item.userName}}</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

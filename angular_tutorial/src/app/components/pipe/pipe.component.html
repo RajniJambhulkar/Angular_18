@@ -1,0 +1,28 @@
+<div class="bg-secondary p-3 m-2 text-center">
+    <div style="color: antiquewhite;">
+        PIPE
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>{{firstName | uppercase}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{firstName | lowercase}}</p>
+
+    </div>
+    <div class="col-3">
+        <p>{{currentDate | date:'dd-MM-yy'}}</p>
+    </div>
+    <div class="col-3">
+        <p>{{student | json}}</p>
+        <p>student marks : {{student.marks | na}}</p>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-3">
+        <p style="color: brown;">Async Pipe</p>
+        <p>{{currentTime | async}}</p>
+    </div>
+</div>
