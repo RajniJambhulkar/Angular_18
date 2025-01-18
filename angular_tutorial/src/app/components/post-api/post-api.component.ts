@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
-export class PostApiComponent {
+export class PostApiComponent implements OnInit{
   deptObj : any = {
   "departmentId": 0,
   "departmentName": "",
@@ -18,7 +18,7 @@ export class PostApiComponent {
   http = inject(HttpClient);
 
 
-  ngOnInit(){
+  ngOnInit(): void{
     this.getDepartments();
   }
 
@@ -27,6 +27,7 @@ export class PostApiComponent {
       debugger;
       if(res.result){
         alert("Department sucessfully created!");
+        this.getDepartments();
       }
       else{
         alert(res.message);

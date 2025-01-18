@@ -9,6 +9,7 @@ import { TemplateComponent } from './components/forms/template/template.componen
 import { ReactiveComponent } from './components/forms/reactive/reactive.component';
 import { GetApiComponent } from './components/get-api/get-api.component';
 import { PostApiComponent } from './components/post-api/post-api.component';
+import { PutDeleteComponent } from './components/put-delete/put-delete.component';
 
 export const routes: Routes = [
     {
@@ -50,5 +51,9 @@ export const routes: Routes = [
     {
         path:'post-api',
         component : PostApiComponent
+    },
+    {
+        path:'put-delete',
+        component : PutDeleteComponent
     }
 ];
