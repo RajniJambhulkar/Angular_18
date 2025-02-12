@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { User } from '../../models/class/User';
 
 @Component({
   selector: 'app-get-api',
@@ -10,7 +11,7 @@ import { Component } from '@angular/core';
 })
 export class GetApiComponent {
   //inject HttpClient
-  userList : any[] = [];
+  userList : User[] = [];
   customerList : any[] = [];
 
   constructor(private http: HttpClient){

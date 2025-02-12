@@ -1,0 +1,83 @@
+
+<h1>ng-container</h1>
+<div class="row pt-3">
+    <div class="col-3">
+        <div class="bg-primary p-3 text-center">
+           <ng-container *ngIf="isContainer">
+            <p>This is from ng-container</p>
+           </ng-container>
+        </div>
+    </div>
+
+    
+    <!-- <div class="row pt-3">
+        <div class="col-3 text-center">
+            <button class="btn btn-success mx-2">Show</button>
+            <button class="btn btn-danger">Hide</button>
+        </div>
+    </div> -->
+    <div class="col-4">
+    <button class="btn btn-warning" (click)="getUsers()">Get Users</button>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>isActive</th>
+            </tr>
+        </thead>
+        <tbody colspan="4">
+
+        @if (loading) {
+            <ng-container >
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-warning" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-info" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-border text-dark" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+            </ng-container>
+        }
+        @else if(!loading){
+        
+            <tr *ngFor = "let user of userList; let sr = index;">
+                <td>{{sr+1}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+            </tr>
+        }
+    </tbody>
+    </table>
+</div>
+</div>
+<div class="col-4">
+    <ng-container *ngTemplateOutlet="temp">
+
+    </ng-container>
+</div>
+
+<div>
+    <ng-template #temp>
+        <p>this is ng template</p>
+    </ng-template>
+</div>

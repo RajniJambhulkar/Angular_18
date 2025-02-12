@@ -1,0 +1,21 @@
+<div class="container">
+<div class="parent">
+<div class="box">
+    <span class="borderLine"></span>
+    <form action="">
+        <h2>Sign in</h2>
+        <div class="inputBox">
+            <input type="text" [(ngModel)]="userObj.EmailId" id="username" name="EmailId" required>
+            <span>Email Id</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" [(ngModel)]="userObj.Password" id="password" name="Password" required>
+            <span>Password</span>
+            <i></i>
+        </div>
+        <button type="submit" id="submit" (click)="onLogin()">Login</button>
+    </form>
+</div>
+</div>
+</div>

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="add-emp">Add Emp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="emp-list">Emp List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="data-binding">Data-binding</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="signal">Signal</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                Directives
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" [routerLink]="['/structural-dir']">Structural Dir</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/attribute-dir']">Attribute Dir</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/ng-template']">ng-template</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/ng-container']">ng-container</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/view-child']">viewchild</a></li>
+
+
+            </ul>
+        </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="pipe">Pipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="template">Template Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="reactive">Reactive Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="get-api">Get-Api</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="post-api">Post-Api</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="put-delete">Put-Delete</a>
+          </li>
+        </ul>
+        <span class="text-black">{{userData?.emailId}}</span>
+        <button class="btn btn-danger" (click)="logout()">logout</button>
+      </div>
+    </div>
+  </nav>
+<div class="container">
+<router-outlet></router-outlet>
+</div>
+

@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-3">
+        <h6>{{firstName()}}</h6>
+    </div>
+    <div class="col-3">
+        {{fullName()}}
+    </div>
+    <div class="col-3">
+        {{middleName}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <p>{{studentObj().rollno}}--{{studentObj().name}}--{{studentObj().city}}</p>
+        <button class="btn btn-primary" (click)="changeCity()">changeCity</button>
+<div class="col-3">
+    @for (item of cityArray(); track $index) {
+        {{item}}
+    }
+    <button class="btn btn-primary" (click)="addCity()">addcity</button>
+</div>
+</div>

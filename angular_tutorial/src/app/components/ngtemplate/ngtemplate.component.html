@@ -1,0 +1,37 @@
+<h1>ng-template</h1>
+<div class="row pt-3">
+    <div class="col-3">
+        <div class="bg-primary p-3 text-center" *ngIf="isUserloggedIn; else notLogged">
+            {{userName}}
+        </div>
+
+        <ng-template #notLogged>
+            <div class="bg-danger p-3 text-center">
+                <p>the user is not logged in</p>
+            </div>
+        </ng-template>
+    </div>
+    <div class="col-4">
+        <ng-template #dynamicTem>
+            <p>this is a dynamic Template</p>
+        </ng-template>
+        <ng-template #dynamicTem>
+            <p>this is a dynamic Template</p>
+        </ng-template>
+        <ng-template #dynamicTem>
+            <p>this is a dynamic Template</p>
+        </ng-template>
+    </div>
+    <div class="col-4">
+        <div #dynaContainer>
+
+        </div>
+    </div>
+    </div>
+    <div><button (click)="loadTemplate()">Click</button></div>
+    <div class="row pt-3">
+        <div class="col-3 text-center">
+            <button class="btn btn-success mx-2">Show</button>
+            <button class="btn btn-danger">Hide</button>
+        </div>
+    </div>
